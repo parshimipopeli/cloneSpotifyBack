@@ -1,4 +1,4 @@
-package fr.parshimipopeli.spotifyclone.usercontext.domain;
+package fr.parshimipopeli.spotifyclone.usercontext.entity;
 
 import fr.parshimipopeli.spotifyclone.sharekernel.domain.AbstractAuditingEntity;
 import jakarta.persistence.*;
