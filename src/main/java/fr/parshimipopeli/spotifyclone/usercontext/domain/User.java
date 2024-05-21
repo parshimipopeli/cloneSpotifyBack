@@ -1,5 +1,6 @@
 package fr.parshimipopeli.spotifyclone.usercontext.domain;
 
+import fr.parshimipopeli.spotifyclone.sharekernel.domain.AbstractAuditingEntity;
 import jakarta.persistence.*;
 
 /**
@@ -7,7 +8,7 @@ import jakarta.persistence.*;
  */
 @Entity
 @Table(name = "spotify-user")
-public class User {
+public class User extends AbstractAuditingEntity<Long> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,6 +28,17 @@ public class User {
 
     @Column(name = "image_url")
     private String imageUrl;
+
+    public User() {}
+
+    public User(Long id, String lastName, String firstName, String email, Subscription subscription, String imageUrl) {
+        this.id = id;
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.email = email;
+        this.subscription = subscription;
+        this.imageUrl = imageUrl;
+    }
 
     public Long getId() {
         return id;
